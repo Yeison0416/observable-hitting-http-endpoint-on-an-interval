@@ -7,7 +7,8 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "type-check": "tsc --noEmit",
         "type-check:watch": "tsc --noEmit --watch",
-        "start": "concurrently -k -n \"WEBPACK,TS\" -c \"cyan,magenta\" \"webpack serve --open --config webpack.dev.js\" \"npm run type-check:watch\"",
+        "start": "concurrently --raw -k -n \"WEBPACK,TS,API\" -c \"cyan,magenta,green\" \"webpack serve --config webpack.dev.js\" \"npm run type-check:watch\" \"npm run api\"",
+        "api": "json-server --watch src/app/data-model/db.json --port 4000",
         "build": "npm run type-check && webpack --config webpack.prod.js",
         "build-dev": "npm run type-check && webpack --config webpack.dev.js"
     },
@@ -38,6 +39,7 @@
         "handlebars-loader": "^1.7.3",
         "html-loader": "^5.1.0",
         "html-webpack-plugin": "^5.6.4",
+        "json-server": "^1.0.0-beta.3",
         "mini-css-extract-plugin": "^2.9.4",
         "sass": "^1.93.0",
         "sass-loader": "^16.0.5",
