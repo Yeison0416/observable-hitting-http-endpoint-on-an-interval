@@ -16,6 +16,15 @@ module.exports = merge(commonConfig, {
         client: {
             overlay: true, // <— show build errors in the browser
         },
+        proxy: [
+            {
+                context: ['/api'],
+                target: 'http://localhost:4000',
+                pathRewrite: { '^/api': '' },
+                changeOrigin: true,
+                logLevel: 'info',
+            },
+        ],
     },
 
     module: {
