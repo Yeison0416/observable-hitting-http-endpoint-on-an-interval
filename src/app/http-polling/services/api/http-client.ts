@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:4000/' as const;
+const BASE_URL = 'api' as const;
 
 export async function httpGet<T>(path: string, options?: RequestInit): Promise<T> {
     try {
@@ -16,7 +16,7 @@ export async function httpGet<T>(path: string, options?: RequestInit): Promise<T
 
         return data;
     } catch (error) {
-        console.log('API Error', error);
+        console.error('API Error', error);
         throw error;
     }
 }
