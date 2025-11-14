@@ -1,0 +1,76 @@
+{
+    "default-state": {
+        "type": "http-polling",
+        "header": {
+            "type": "header",
+            "title": "Hitting Http End Point On An Interval"
+        },
+        "buttons": {
+            "type": "buttons",
+            "buttons": [
+                {
+                    "buttonData": {
+                        "type": "button",
+                        "ariaLabel": "start http request",
+                        "label": "Start Polling",
+                        "id": "start"
+                    }
+                },
+                {
+                    "buttonData": {
+                        "type": "button",
+                        "ariaLabel": "stop http request",
+                        "label": "Stop Polling",
+                        "id": "stop"
+                    }
+                }
+            ]
+        },
+        "radioButtons": {
+            "type": "radio-buttons",
+            "buttons": [
+                {
+                    "buttonData": {
+                        "type": "radio-button",
+                        "groupName": "type",
+                        "label": "Cats",
+                        "value": "cats",
+                        "id": "cats-check-box",
+                        "checked": true
+                    }
+                },
+                {
+                    "buttonData": {
+                        "type": "radio-button",
+                        "groupName": "type",
+                        "label": "Meats",
+                        "value": "meats",
+                        "id": "meats-check-box"
+                    }
+                }
+            ]
+        },
+        "richText": {
+            "type": "rich-texts",
+            "text": "Select Cats or Meats and start polling! The Cats option will request random <a href=\"https://plackitten.com\">place kitten</a> images, and the meats option will request random blocks of <a href=\"https://baconipsum.com/json-api/\">bacon-ipsum</a><br> <div class=\"rich-text__polling-status\">Polling Status: <span id=\"polling-status\"> Stopped </span></div>"
+        },
+        "richText1": {
+            "type": "rich-texts",
+            "text": "Text Will appear here",
+            "id": "text"
+        },
+        "picture": {
+            "type": "picture",
+            "media": {
+                "type": "image",
+                "sources": {
+                    "default": {
+                        "url": "https://cdn.britannica.com/70/234870-050-D4D024BB/Orange-colored-cat-yawns-displaying-teeth.jpg"
+                    }
+                },
+                "alt": "image cat",
+                "ariaLabel": "image cat"
+            }
+        }
+    }
+}

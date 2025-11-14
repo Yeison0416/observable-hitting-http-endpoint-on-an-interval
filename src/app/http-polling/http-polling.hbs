@@ -1,0 +1,18 @@
+<div class="http-polling">
+    {{> header header}}
+    {{> rich-text richText}}
+    <form>
+        <fieldset>
+            {{#each radioButtons.buttons}}
+                {{> radio-button buttonData}}
+            {{/each}}
+        </fieldset>
+    </form>
+    <div class="button-group">
+        {{#each buttons.buttons}}
+            {{> button buttonData}}
+        {{/each}}
+    </div>
+    {{> rich-text richText1}}
+    {{> picture picture}}
+</div>

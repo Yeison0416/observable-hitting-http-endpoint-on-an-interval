@@ -10,6 +10,21 @@ module.exports = merge(commonConfig, {
     devServer: {
         watchFiles: './src/**/*.html',
         static: './dist',
+        port: 8080, // <— define a port
+        open: true, // <— auto open browser
+        hot: true, // <— enable HMR
+        client: {
+            overlay: true, // <— show build errors in the browser
+        },
+        proxy: [
+            {
+                context: ['/api'],
+                target: 'http://localhost:4000',
+                pathRewrite: { '^/api': '' },
+                changeOrigin: true,
+                logLevel: 'info',
+            },
+        ],
     },
 
     module: {
