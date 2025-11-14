@@ -1,7 +1,6 @@
 import template from './http-polling.hbs';
 import { createDefaultState } from './state/default-state.state';
 import { DefaultState } from './services/types/default-state';
-import { loadESLint } from 'eslint';
 
 type HttpPolling = {
     start: () => void;

@@ -1,5 +1,6 @@
 import 'reset-css';
 import './index.scss';
+
 import { HttpPolling } from './http-polling/http-polling';
 
 function application() {

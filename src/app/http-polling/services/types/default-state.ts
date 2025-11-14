@@ -1,34 +1,61 @@
 export type DefaultState = {
-    type: string;
+    type: string; // "http-polling"
     header: Header;
+
     buttons: {
-        type: string;
+        type: string; // "buttons"
         buttons: {
-            type: string;
-            ariaLabel: string;
-            label: string;
+            buttonData: {
+                type: string; // "button"
+                ariaLabel: string;
+                label: string;
+                id: string;
+            };
         }[];
     };
+
     radioButtons: {
-        type: string;
-        buttonsType: string;
-        groupName: string;
+        type: string; // "radio-buttons"
         buttons: {
-            type: string;
-            label: string;
-            value: string;
-            id: string;
-            checked?: boolean;
+            buttonData: {
+                type: string; // "radio-button"
+                groupName: string;
+                label: string;
+                value: string;
+                id: string;
+                checked?: boolean;
+            };
         }[];
     };
-    richTexts: {
-        type: string;
-        headerData: Header;
+
+    richText: {
+        type: string; // "rich-texts"
         text: string;
+        id?: string;
+    };
+
+    richText1: {
+        type: string; // "rich-texts"
+        text: string;
+        id?: string;
+    };
+
+    picture: {
+        type: string; // "picture"
+        media: {
+            type: string; // "image"
+            sources: {
+                default: {
+                    url: string;
+                };
+            };
+            alt: string;
+            ariaLabel: string;
+        };
     };
 };
 
 export type Header = {
-    type: string;
+    type: string; // "header"
     title: string;
 };

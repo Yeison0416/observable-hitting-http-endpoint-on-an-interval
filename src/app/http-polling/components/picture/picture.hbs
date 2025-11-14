@@ -1,0 +1,22 @@
+<div class='picture'>
+    <picture>
+        <!-- Small screens: mobile first -->
+        <source media='{{media.sources.mobile.media}}' sizes='{{media.sources.mobile.sizes}}' srcset='{{media.sources.mobile.srcset}}' />
+        <!-- Medium screens: tablets -->
+        <source media='{{media.sources.tablet.media}}' sizes='{{media.sources.tablet.sizes}}' srcset='{{media.sources.tablet.srcset}}' />
+        <!-- Small laptops: desktop-small -->
+        <source
+            media='{{media.sources.desktopSmall.media}}'
+            sizes='{{media.sources.desktopSmall.sizes}}'
+            srcset='{{media.sources.desktopSmall.srcset}}'
+        />
+        <!-- Large screens: desktop-large and beyond -->
+        <source
+            media='{{media.sources.desktopLarge.media}}'
+            sizes='{{media.sources.desktopLarge.sizes}}'
+            srcset='{{media.sources.desktopLarge.srcset}}'
+        />
+
+        <img class='picture__image' src='{{media.sources.default.url}}' alt='{{alt}}' aria-label='{{ariaLabel}}' />
+    </picture>
+</div>
