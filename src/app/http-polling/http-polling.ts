@@ -7,30 +7,24 @@ type HttpPolling = {
 };
 
 export function HttpPolling(appRootNode: HTMLElement): HttpPolling {
-    let initStateData: DefaultState | null = null;
     const defaultStateData = createDefaultState();
 
-    async function loadDefaultStateData() {
+    const initStateDataPromise: Promise<DefaultState> = (async () => {
         await defaultStateData.init();
-        initStateData = defaultStateData.getState();
-    }
+        return defaultStateData.getState();
+    })();
 
-    function renderInitialMarkUp() {
-        if (!initStateData) {
+    async function renderInitialMarkUp() {
+        try {
+            const initStateData = await initStateDataPromise;
+            appRootNode.innerHTML = template(initStateData);
+        } catch (error) {
             appRootNode.innerHTML = '<p>Failed to load data. Please try again later.</p>';
-            return;
         }
-
-        appRootNode.innerHTML = template(initStateData);
-    }
-
-    async function setInitMarkUp() {
-        await loadDefaultStateData();
-        renderInitialMarkUp();
     }
 
     async function start() {
-        await setInitMarkUp();
+        await renderInitialMarkUp();
     }
 
     const state = {
