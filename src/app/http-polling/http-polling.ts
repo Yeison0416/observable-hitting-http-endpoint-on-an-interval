@@ -29,7 +29,7 @@ export function HttpPolling(appRootNode: HTMLElement): HttpPolling {
         }
     }
 
-    function checkBoxClickHandlers() {
+    function checkBoxClickHandler() {
         if (!domElements) return;
 
         fromEvent(domElements?.catsCheckBox, 'click').subscribe(() => {
@@ -47,7 +47,7 @@ export function HttpPolling(appRootNode: HTMLElement): HttpPolling {
     async function initializeUI() {
         await renderInitialMarkUp();
         domElements = getDomElements();
-        checkBoxClickHandlers();
+        checkBoxClickHandler();
     }
 
     async function start() {
