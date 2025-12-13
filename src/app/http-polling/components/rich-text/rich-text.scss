@@ -2,4 +2,12 @@
 	&__polling-status {
 		margin: 20px 0;
 	}
+
+	&:has(#text) {
+		display: none;
+
+		&.active {
+			display: block;
+		}
+	}
 }

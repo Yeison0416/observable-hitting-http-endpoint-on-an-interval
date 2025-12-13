@@ -2,13 +2,14 @@ import { getDefaultState } from '../services/end-points/default-state-api.servic
 import type { DefaultState } from '../services/types/default-state';
 
 export function createDefaultState() {
-    let defaultState: DefaultState | null = null;
+    let defaultState: DefaultState;
 
     async function init() {
         try {
             defaultState = await getDefaultState();
         } catch (error) {
             console.error('Error fetching data:', error);
+            throw error;
         }
     }
 
