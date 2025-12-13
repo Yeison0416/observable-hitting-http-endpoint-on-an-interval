@@ -1,10 +1,7 @@
-const BASE_URL = 'api' as const;
-
 export async function httpGet<T>(path: string, options?: RequestInit): Promise<T> {
     try {
-        const response: Response = await fetch(`${BASE_URL}${path}`, {
+        const response: Response = await fetch(path, {
             method: 'GET',
-            headers: { 'Content-Type': 'application/json' },
             ...options,
         });
 

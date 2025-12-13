@@ -4,6 +4,7 @@ export type DomElements = {
     meatsCheckBox: HTMLElement;
     startButton: HTMLElement;
     stopButton: HTMLElement;
-    text: HTMLElement;
+    richText: HTMLElement;
+    richTextSpan: HTMLElement;
     picture: HTMLElement;
 };

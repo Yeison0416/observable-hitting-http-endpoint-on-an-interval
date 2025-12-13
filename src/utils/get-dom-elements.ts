@@ -7,7 +7,8 @@ export function getDomElements(): DomElements {
         meatsCheckBox: document.getElementById('meats-check-box') as HTMLElement,
         startButton: document.getElementById('start') as HTMLElement,
         stopButton: document.getElementById('stop') as HTMLElement,
-        text: document.querySelector('.rich-text:has(#text)') as HTMLElement,
-        picture: document.querySelector('.picture') as HTMLElement,
+        richText: document.querySelector('.rich-text:has(#text)') as HTMLElement,
+        richTextSpan: document.querySelector('.rich-text:has(#text) span') as HTMLElement,
+        picture: document.querySelector('.picture__image') as HTMLElement,
     };
 }
